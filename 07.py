@@ -14,16 +14,12 @@ for i in range(2, len(data)):
         for j in range(len(data[i])):
             if isinstance(data[i-1][j], int):
                 if data[i][j] == '^':
-                    if isinstance(data[i][j-1], int):
-                        data[i][j-1] += data[i-1][j]
-                    else:
-                        data[i][j-1] = data[i-1][j]
-                    if isinstance(data[i][j+1], int):
-                        data[i][j+1] += data[i-1][j]
-                    else:
-                        data[i][j+1] = data[i-1][j]
-                    data[i+1][j-1] = data[i][j-1]
-                    data[i+1][j+1] = data[i][j+1]
+                    for k in [-1, 1]:
+                        if isinstance(data[i][j+k], int):
+                            data[i][j+k] += data[i-1][j]
+                        else:
+                            data[i][j+k] = data[i-1][j]
+                        data[i+1][j+k] = data[i][j+k]
                     answer_a += 1
                 else:
                     if isinstance(data[i][j], int):
