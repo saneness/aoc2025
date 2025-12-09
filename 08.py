@@ -1,6 +1,5 @@
 from aocd.models import Puzzle
 import math
-import itertools
 
 puzzle = Puzzle(year=2025, day=8)
 data = puzzle.input_data.split('\n')
