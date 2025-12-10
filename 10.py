@@ -46,8 +46,5 @@ for item in data:
 
     answer_b += round(res)
 
-print(answer_a)
-print(answer_b)
-
 puzzle.answer_a = answer_a
 puzzle.answer_b = answer_b
